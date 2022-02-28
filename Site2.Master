@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="Group_6_MP.Site2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="CSS/StyleSheet1.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <nav id="nav">
+    <ul>  
+        <li><a href="Cart.aspx">CART</a></li>
+        <li><a href="Movies.aspx">MOVIES</a></li>  
+        <li><a href="Account.aspx">ACCOUNT</a></li>  
+        <li><a href="AboutUs.aspx">ABOUT US</a></li>
+        <li><a href="FirstPage.aspx">SIGN OUT</a></li>
+    </ul>
+        <asp:Label ID="Label1" runat="server" Text="Welcome," style="color: gold; margin-left: 5%;"></asp:Label>
+        <asp:Label ID="UsernameLBL" runat="server" Text="User" style="color: gold;"></asp:Label>
+    </nav>  
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
