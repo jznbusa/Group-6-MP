@@ -19,7 +19,8 @@ namespace Group_6_MP
                 if (!IsPostBack)
                 {
                     // Display user info
-                    using (SqlConnection xConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
+                    using (SqlConnection xConn = new SqlConnection(
+                        ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                     {
                         using (SqlCommand xCmd = new SqlCommand())
                         {
@@ -49,7 +50,8 @@ namespace Group_6_MP
         // update user info
         protected void Save_Click(object sender, EventArgs e)
         {
-            using (SqlConnection xConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
+            using (SqlConnection xConn = new SqlConnection(
+                ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             {
                 using (SqlCommand xCmd = new SqlCommand())
                 {

@@ -27,10 +27,12 @@
                     <RowStyle BorderColor="#993366" BorderStyle="Inset" />
                 </asp:GridView>
 
-            <asp:SqlDataSource ID="TicketSold" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            <asp:SqlDataSource ID="TicketSold" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
                 SelectCommand="SELECT * FROM [Purchase]"></asp:SqlDataSource>
 
-            <asp:SqlDataSource ID="TotalRevenue" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            <asp:SqlDataSource ID="TotalRevenue" runat="server" ConnectionString="<%$ 
+                ConnectionStrings:ConnectionString %>" 
                 SelectCommand="SELECT SUM(Total) AS TotalRevenue FROM Purchase"></asp:SqlDataSource>
         <br />
         </div>
