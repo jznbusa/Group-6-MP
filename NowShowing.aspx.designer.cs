@@ -159,6 +159,15 @@ namespace Group_6_MP
         protected global::System.Web.UI.WebControls.CheckBoxList ParkingLotCBL;
 
         /// <summary>
+        /// SqlDataSource3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
+
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>

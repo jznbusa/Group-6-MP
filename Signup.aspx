@@ -30,11 +30,11 @@
                 <asp:ListItem>Cash</asp:ListItem>
                 <asp:ListItem>Credit Card</asp:ListItem>
             </asp:DropDownList>
-         <br />
-            <asp:Label ID="Label6" runat="server" Text="Address" CssClass="labelz"></asp:Label>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="Passw"><span style="color: red;">*</span></asp:RequiredFieldValidator>
+         <br /><asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Users]"></asp:SqlDataSource>
+        <asp:Label ID="Label6" runat="server" Text="Address" CssClass="labelz"></asp:Label>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="Address"><span style="color: red;">*</span></asp:RequiredFieldValidator>
             <asp:TextBox ID="Address" runat="server" CssClass="textboxAddress"></asp:TextBox>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Users]"></asp:SqlDataSource>
+        <br />
         </div>
         <center>
             <asp:Button ID="Register" runat="server" Text="Register" class="button" OnClick="Register_Click"/>

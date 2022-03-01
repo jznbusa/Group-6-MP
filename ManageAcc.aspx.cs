@@ -30,8 +30,7 @@ namespace Group_6_MP
                     xCmd.Parameters.AddWithValue("@xEmail", EmailTB.Text);
                     xCmd.Parameters.AddWithValue("@xPassword", PasswordTB.Text);
                     xCmd.Parameters.AddWithValue("@xPayment", PaymentDDL.SelectedValue);
-                    xCmd.Parameters.AddWithValue("@xAddress", AddressTB.Text);
-
+                    xCmd.Parameters.AddWithValue("@xAddress", Address.Text);
                     xConn.Open();
                     xCmd.ExecuteNonQuery();
                 }

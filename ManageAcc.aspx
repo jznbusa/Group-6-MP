@@ -13,14 +13,14 @@
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CustomerID" DataSourceID="SqlDataSource1">
             <HeaderStyle BackColor="#ffcc00" Font-Bold="True" />
             <Columns>
-                <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
-                <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" InsertVisible="False" ReadOnly="True" SortExpression="CustomerID" Visible="False" />
-                <asp:BoundField DataField="xLastname" HeaderText="Lastname" SortExpression="xLastname" />
-                <asp:BoundField DataField="xFirstname" HeaderText="Firstname" SortExpression="xFirstname" />
-                <asp:BoundField DataField="xEmail" HeaderText="Email" SortExpression="xEmail" />
-                <asp:BoundField DataField="xPassword" HeaderText="Password" SortExpression="xPassword" />
-                <asp:BoundField DataField="xPayment" HeaderText="Payment" SortExpression="xPayment" />
-                <asp:BoundField DataField="xAddress" HeaderText="Address" SortExpression="xAddress" />
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:BoundField DataField="xLastname" HeaderText="xLastname" SortExpression="xLastname" />
+                <asp:BoundField DataField="xFirstname" HeaderText="xFirstname" SortExpression="xFirstname" />
+                <asp:BoundField DataField="xEmail" HeaderText="xEmail" SortExpression="xEmail" />
+                <asp:BoundField DataField="xPassword" HeaderText="xPassword" SortExpression="xPassword" />
+                <asp:BoundField DataField="xPayment" HeaderText="xPayment" SortExpression="xPayment" />
+                <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" SortExpression="CustomerID" InsertVisible="False" ReadOnly="True" Visible="False" />
+                <asp:BoundField DataField="xAddress" HeaderText="xAddress" SortExpression="xAddress" />
             </Columns>
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
@@ -78,7 +78,7 @@
                 </td>
                 <td style="width: 140px">
                     Address:<br />
-                    <asp:TextBox ID="AddressTB" runat="server" Width="140" />
+                    <asp:TextBox ID="Address" runat="server" Width="140" />
                 </td>
                 <td style="width: 140px">
                     <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="Insert" />

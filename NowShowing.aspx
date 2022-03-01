@@ -49,29 +49,13 @@
                     <asp:Label ID="Label1" runat="server" Text="SCREEN"></asp:Label>
                 </div>
             <asp:CheckBoxList ID="ParkingLotCBL" runat="server" AutoPostBack="True" 
-                RepeatColumns="4" Width="554px" OnSelectedIndexChanged="ParkingLotCBL_SelectedIndexChanged">
-                <asp:ListItem>Lot 1</asp:ListItem>
-                <asp:ListItem>Lot 2</asp:ListItem>
-                <asp:ListItem>Lot 3</asp:ListItem>
-                <asp:ListItem>Lot 4</asp:ListItem>
-                <asp:ListItem>Lot 5</asp:ListItem>
-                <asp:ListItem>Lot 6</asp:ListItem>
-                <asp:ListItem>Lot 7</asp:ListItem>
-                <asp:ListItem>Lot 8</asp:ListItem>
-                <asp:ListItem>Lot 9</asp:ListItem>
-                <asp:ListItem>Lot 10</asp:ListItem>
-                <asp:ListItem>Lot 11</asp:ListItem>
-                <asp:ListItem>Lot 12</asp:ListItem>
-                <asp:ListItem>Lot 13</asp:ListItem>
-                <asp:ListItem>Lot 14</asp:ListItem>
-                <asp:ListItem>Lot 15</asp:ListItem>
-                <asp:ListItem>Lot 16</asp:ListItem>
-                <asp:ListItem>Lot 17</asp:ListItem>
-                <asp:ListItem>Lot 18</asp:ListItem>
-                <asp:ListItem>Lot 19</asp:ListItem>
-                <asp:ListItem>Lot 20</asp:ListItem>
+                RepeatColumns="4" Width="554px" OnSelectedIndexChanged="ParkingLotCBL_SelectedIndexChanged" DataSourceID="SqlDataSource3" DataTextField="LotNumber" DataValueField="Status">
+          
                 </asp:CheckBoxList>
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [ParkingLot]">
+                </asp:SqlDataSource>
         </center>
+                
             <asp:Label ID="Label2" runat="server" Text="Total" CssClass="labelz"></asp:Label>
             <asp:TextBox ID="Total" runat="server" CssClass="textbox" ReadOnly="true"></asp:TextBox>
             <center>

@@ -96,7 +96,10 @@ namespace Group_6_MP
             for (int i = 0; i < a; i++)
             {
                 if (ParkingLotCBL.Items[i].Selected == true)
-                    count++;
+                    if (ParkingLotCBL.SelectedValue == "Unoccupied")
+                        count++;
+                else
+                    ParkingLotCBL.Items[i].Selected = false;
             }
 
             if (count > int.Parse(QuantityTB.Text))

@@ -19,37 +19,40 @@ namespace Group_6_MP
         {
             if (DropDownList1.SelectedValue != "Select payment method")
             {
-                try
+                using (SqlConnection xConn = new SqlConnection(
+                        ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
-                    using (SqlConnection xConn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
+                    using (SqlCommand xCmd = new SqlCommand())
                     {
-                        using (SqlCommand xCmd = new SqlCommand())
+                        xCmd.Connection = xConn;
+                        xConn.Open();
+                        xCmd.CommandText = "SELECT xEmail FROM [Users] WHERE xEmail = @param";
+                        xCmd.Parameters.AddWithValue("@param", Email.Text);
+                        SqlDataReader xReader = xCmd.ExecuteReader();
+                        if (xReader.Read())
                         {
-                            xCmd.Connection = xConn;
+                            Response.Write("<script>alert('Account already exists.');</script>");
+                            xReader.Close();
+                        }
+                        else
+                        {
+                            xReader.Close();
                             xCmd.CommandText = "INSERT INTO [Users] (xLastname, xFirstname, xEmail, xPassword, xPayment, xAddress) " +
-                                "VALUES (@xLastname, @xFirstname, @xEmail, @xPassword, @xPayment, @xAddress)";
-
+                                            "VALUES (@xLastname, @xFirstname, @xEmail, @xPassword, @xPayment, @xAddress)";
                             xCmd.Parameters.AddWithValue("@xLastname", Lastname.Text);
                             xCmd.Parameters.AddWithValue("@xFirstname", Firstname.Text);
                             xCmd.Parameters.AddWithValue("@xEmail", Email.Text);
                             xCmd.Parameters.AddWithValue("@xPassword", Passw.Text);
                             xCmd.Parameters.AddWithValue("@xPayment", DropDownList1.SelectedValue);
                             xCmd.Parameters.AddWithValue("@xAddress", Address.Text);
-
-                            xConn.Open();
                             xCmd.ExecuteNonQuery();
+                            Response.Write("<script>alert('Success!');</script>");
+                            Session["usermail"] = Email.Text;
+                            Response.Redirect("Movies.aspx");
+                        }
                         }
                     }
-                    Response.Write("<script>alert('Success!');</script>");
-                    Session["usermail"] = Email.Text;
-                    Response.Redirect("Movies.aspx");
                 }
-                catch (Exception ex)
-                {
-                    Response.Write("error" + ex.ToString());
-                }
-
-            }
             else
             {
                 Response.Write("<script>alert('Please select payment method.');</script>");
